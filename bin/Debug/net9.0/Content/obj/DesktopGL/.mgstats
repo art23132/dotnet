@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/slavo/dotnet/bin/Debug/net9.0/Content/Font.spritefont","C:/Users/slavo/dotnet/bin/Debug/net9.0/Content/bin/DesktopGL/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21529,0,3502288
+"C:/Users/slavo/dotnet/bin/Debug/net9.0/Content/Sprite_Fut.png","C:/Users/slavo/dotnet/bin/Debug/net9.0/Content/bin/DesktopGL/Sprite_Fut.xnb","TextureProcessor","Texture2DContent",606,6229,0,0398872
+"C:/Users/slavo/dotnet/bin/Debug/net9.0/Content/sprite_hero.png","C:/Users/slavo/dotnet/bin/Debug/net9.0/Content/bin/DesktopGL/sprite_hero.xnb","TextureProcessor","Texture2DContent",572,4181,0,0039813
