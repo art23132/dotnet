@@ -5,12 +5,15 @@ using System.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Objects;
 
 
 namespace dotnet;
 
 public class Game1 : Game
 {
+    ScaledSprite sprite_Cat;
+    Sprite_Fut sprite_Fut;
 
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
@@ -18,7 +21,7 @@ public class Game1 : Game
 
 
     //texture for sprite
-    private Texture2D _spriteCat;
+    //private Texture2D _spriteCat;
     private Texture2D _spriteFut;
     private Vector2 SpritePos_Cat;
 
@@ -45,11 +48,21 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        _spriteCat = Content.Load<Texture2D>("sprite_hero");
-        _spriteFut = Content.Load<Texture2D>("sprite_Fut");
+        // _spriteCat = Content.Load<Texture2D>("sprite_hero");
+        // _spriteFut = Content.Load<Texture2D>("sprite_Fut");
         _spriteFont = Content.Load<SpriteFont>("Font");
 
-        SpritePos_Cat = new Vector2(0, 0);
+        // SpritePos_Cat = new Vector2(0, 0);
+        Texture2D texture_Futs = Content.Load<Texture2D> ("sprite_Fut");
+
+        sprite_Fut = new Sprite_Fut(texture_Futs, Vector2.One);
+
+
+
+        Texture2D texture_cats = Content.Load<Texture2D> ("sprite_hero");
+        Vector2 SpritePos_Cat = new Vector2(0, 0);
+
+        sprite_Cat = new ScaledSprite(texture_cats, SpritePos_Cat);
         
 
         // TODO: use this.Content to load your game content here
@@ -70,7 +83,7 @@ public class Game1 : Game
         SpritePos_Cat.X = cursorX;
         SpritePos_Cat.Y = cursorY;
 
-        // if (_spriteCat.Intersect())
+        // if (sprite_Cat.Intersect())
         // {
             
         // }
@@ -86,10 +99,14 @@ public class Game1 : Game
 
         _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
-        _spriteBatch.Draw(_spriteFut, new Rectangle(new Point(0, 0), new Point(_spriteFut.Width * 4, _spriteFut.Height * 4) ), Color.White);
-        _spriteBatch.Draw(_spriteCat, new Rectangle(new Point((int)SpritePos_Cat.X, (int)SpritePos_Cat.Y), new Point(64)), Color.White);
+        // _spriteBatch.Draw(_spriteFut, new Rectangle(new Point(0, 0), new Point(_spriteFut.Width * 4, _spriteFut.Height * 4) ), Color.White);
+        // _spriteBatch.Draw(_spriteCat, new Rectangle(new Point((int)SpritePos_Cat.X, (int)SpritePos_Cat.Y), new Point(64)), Color.White);
 
         _spriteBatch.DrawString(_spriteFont, "Scoore: " + x, new Vector2(20, 420), Color.Black);
+
+
+        _spriteBatch.Draw(sprite_Fut.texture, sprite_Fut.position, Color.White);
+        _spriteBatch.Draw(sprite_Cat.texture, new Rectangle(new Point((int)SpritePos_Cat.X, (int)SpritePos_Cat.Y), new Point(64)), Color.White);
         
         _spriteBatch.End();
 

@@ -34,3 +34,4 @@ C:\Users\slavo\dotnet\obj\Debug\net9.0\ref\dotnet.dll
 c:\Users\slavo\dotnet\bin\Debug\net9.0\Content\Sprite_Fut.xnb
 c:\Users\slavo\dotnet\bin\Debug\net9.0\Content\sprite_hero.xnb
 c:\Users\slavo\dotnet\bin\Debug\net9.0\Content\Font.xnb
+c:\Users\slavo\dotnet\obj\Debug\net9.0\dotnet.sourcelink.json
